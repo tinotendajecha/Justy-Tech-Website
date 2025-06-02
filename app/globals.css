@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 200 100% 15%; /* #00324D (Navy Blue) */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 60 100% 50%; /* #FFF200 (Yellow) */
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 24 100% 57%; /* #FF7F27 (Orange) */
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 200 100% 15%; /* Navy Blue */
+    --chart-3: 197 37% 24%;
+    --chart-4: 195 69% 52%; /* #29ABE2 (Cyan) */
+    --chart-5: 24 100% 57%; /* Orange */
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 200 100% 5%;
+    --foreground: 0 0% 98%;
+    --card: 200 70% 7%;
+    --card-foreground: 0 0% 98%;
+    --popover: 200 70% 7%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 195 69% 52%; /* #29ABE2 (Cyan) in dark mode */
+    --primary-foreground: 0 0% 9%;
+    --secondary: 60 100% 50%; /* #FFF200 (Yellow) */
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 24 100% 57%; /* #FF7F27 (Orange) */
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 200 50% 20%;
+    --input: 200 50% 20%;
+    --ring: 195 69% 52%;
+    --chart-1: 195 69% 52%; /* Cyan */
+    --chart-2: 60 100% 50%; /* Yellow */
+    --chart-3: 30 80% 55%;
+    --chart-4: 24 100% 57%; /* Orange */
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom Fonts */
+.font-poppins {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.font-lato {
+  font-family: var(--font-lato), sans-serif;
+}
+
+/* Transition delays */
+.transition-delay-100 {
+  transition-delay: 100ms;
+}
+.transition-delay-200 {
+  transition-delay: 200ms;
+}
+.transition-delay-300 {
+  transition-delay: 300ms;
+}
+.transition-delay-400 {
+  transition-delay: 400ms;
+}
+.transition-delay-500 {
+  transition-delay: 500ms;
+}
+
+/* Animation utilities */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* For aspect ratio */
+.aspect-w-4 {
+  position: relative;
+  padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+}
+
+.aspect-w-4 > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.aspect-w-4.aspect-h-3 {
+  --tw-aspect-w: 4;
+  --tw-aspect-h: 3;
+}
+
+html {
+  scroll-behavior: smooth;
+}

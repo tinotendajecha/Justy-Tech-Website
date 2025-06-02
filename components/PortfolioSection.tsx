@@ -16,7 +16,7 @@ const portfolioItems = services.map(service => ({
   imageSrc: service.imageSrc
 }))
 
-const categories = ['all', ...new Set(portfolioItems.map(item => item.category))]
+const categories = ['all', ...Array.from(new Set(portfolioItems.map(item => item.category)))]
 
 export default function PortfolioSection() {
   const [selectedCategory, setSelectedCategory] = useState('all')
